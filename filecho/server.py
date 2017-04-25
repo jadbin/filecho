@@ -30,6 +30,8 @@ class Server:
         log.info("Run web server, port={0}, root directory={1}".format(self._port, self._root_dir))
         app = web.Application(logger=log, loop=self._loop)
         app.router.add_static("/", path=self._root_dir, name="static")
-        self._loop.run_until_complete(self._loop.create_server(app.make_handler(access_log=None), "0.0.0.0", self._port))
+        self._loop.run_until_complete(self._loop.create_server(app.make_handler(access_log=None, loop=self._loop),
+                                                               "0.0.0.0",
+                                                               self._port))
         t = threading.Thread(target=_run)
         t.start()

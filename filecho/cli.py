@@ -17,6 +17,8 @@ class Command:
                             help="the root directory of static files")
         parser.add_argument("-p", "--port", dest="port", metavar="PORT", type=int, default=80,
                             help="serving port")
+        parser.add_argument("--prefix", dest="prefix", metavar="PREFIX", default="/",
+                            help="path prefix")
 
     def run(self, args):
         logger = {
@@ -44,8 +46,7 @@ class Command:
         root_dir = args.dir
         if not root_dir:
             raise UsageError()
-        port = args.port
-        server = Server(port, root_dir)
+        server = Server(args.port, root_dir, prefix=args.prefix)
         server.run()
 
 

@@ -18,7 +18,7 @@ class Command:
         parser.add_argument("-p", "--port", dest="port", metavar="PORT", type=int, default=80,
                             help="serving port")
         parser.add_argument("--prefix", dest="prefix", metavar="PREFIX", default="/",
-                            help="path prefix")
+                            help="the prefix of request path")
 
     def run(self, args):
         logger = {

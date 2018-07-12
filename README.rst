@@ -37,10 +37,10 @@ Run web server with:
 
 ::
 
-    $ filecho -d DIR -p PORT
+    $ filecho -d DIR -p PORT --prefix PREFIX
 
-where ``DIR`` is the root directory of static files, ``PORT`` is the serving port.
-The default serving port is ``80`` without setting ``-p``.
+where ``DIR`` is the root directory of static files, ``PORT`` is the serving port, ``PREFIX`` is the prefix of the request path.
+The default serving port is ``80``.
 
 
 By the way, you can view the help message for usage with:

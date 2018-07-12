@@ -20,7 +20,7 @@ def read_version():
 def main():
     if sys.version_info < (3, 5):
         raise RuntimeError("Python 3.5+ is required")
-    install_requires = ["aiohttp>=3.1.3,<4.0"]
+    install_requires = ["aiohttp>=3.3.2,<4.0"]
     setup(
         name="filecho",
         version=read_version(),
